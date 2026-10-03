@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img"
+     aria-label="avenpa — web, linux, automation">
+  <defs>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M60 0H0V60" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="mask-fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#fff" stop-opacity="0.9"/>
+      <stop offset="45%"  stop-color="#fff" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0.55"/>
+    </linearGradient>
+    <radialGradient id="mask-radial" cx="50%" cy="42%" r="78%">
+      <stop offset="0%"   stop-color="#fff" stop-opacity="1"/>
+      <stop offset="62%"  stop-color="#fff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="gridmask">
+      <rect width="1200" height="620" fill="url(#mask-fade)"/>
+      <rect width="1200" height="620" fill="url(#mask-radial)"/>
+    </mask>
+    <radialGradient id="vignette" cx="50%" cy="38%" r="75%">
+      <stop offset="55%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.55"/>
+    </radialGradient>
+    <clipPath id="card"><rect width="1200" height="620" rx="20"/></clipPath>
+  </defs>
+
+  <style>
+    .name    { font: 200 86px -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, 'Helvetica Neue', Arial, sans-serif; letter-spacing: -2.8px; fill: #f6f6f6; }
+    .tag     { font: 400 13.5px ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; letter-spacing: 6.4px; fill: #8c8c8c; }
+    .lab     { font: 400 11px ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; letter-spacing: 2.6px; fill: #767676; }
+    .val     { font: 300 19px -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, 'Helvetica Neue', Arial, sans-serif; fill: #d6d6d6; }
+    .mono    { font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; font-size: 17px; fill: #f0f0f0; font-weight: 400; }
+    .chip-t  { font: 400 13px ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; fill: #ededed; text-anchor: middle; }
+    .foot    { font: 400 11px ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; letter-spacing: 5px; fill: #6d6d6d; }
+    .chip rect { fill: rgba(255,255,255,0.045); stroke: rgba(255,255,255,0.16); stroke-width: 1; }
+    .rule    { stroke: rgba(255,255,255,0.11); stroke-width: 1; transform-box: fill-box; transform-origin: left center; }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+    @keyframes draw   { from { opacity: 0; transform: scaleX(0.15); } to { opacity: 1; transform: scaleX(1); } }
+    @keyframes pop    { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+    @keyframes glow   { 0%,100% { opacity: .5 } 50% { opacity: 1 } }
+
+    .name, .row, .chip, .foot { animation: fadeUp .85s cubic-bezier(.2,.7,.2,1) both; }
+    .tag  { animation: fadeUp .85s cubic-bezier(.2,.7,.2,1) both; }
+    .rule { animation: draw .9s cubic-bezier(.2,.7,.2,1) both; }
+    .chip { animation-name: pop; animation-duration: .5s; }
+    .tag  { animation-delay: .1s; }
+    .foot { animation-delay: .62s; }
+    .dot  { animation: glow 4s ease-in-out infinite; }
+    @media (prefers-reduced-motion: reduce) {
+      .name, .tag, .row, .chip, .foot, .rule, .dot { animation: none !important; }
+    }
+  </style>
+
+  <g clip-path="url(#card)">
+    <rect width="1200" height="620" fill="#0a0a0a"/>
+    <rect width="1200" height="620" fill="url(#grid)" mask="url(#gridmask)"/>
+    <rect width="1200" height="620" fill="url(#vignette)"/>
+
+    <!-- 이름 / 태그라인 -->
+    <g class="name-g">
+      <text class="name" x="210" y="180">avenpa</text>
+      <text class="tag"  x="212" y="222">WEB · LINUX · AUTOMATION</text>
+    </g>
+
+    <g class="rules">
+    <line class="rule" style="animation-delay:0.24s" x1="210" y1="286" x2="990" y2="286"/>
+    <line class="rule" style="animation-delay:0.31s" x1="210" y1="360" x2="990" y2="360"/>
+    <line class="rule" style="animation-delay:0.38s" x1="210" y1="432" x2="990" y2="432"/>
+    <line class="rule" style="animation-delay:0.45s" x1="210" y1="504" x2="990" y2="504"/>
+    </g>
+
+    <!-- 정보 행 -->
+    <g class="row" style="animation-delay:0.28s">
+      <text class="lab" x="210" y="331">STACK</text>
+
+    <g class="chip" style="animation-delay:0.44s"><rect x="385" y="312.5" width="70" height="27.0" rx="7"/><text x="420.0" y="330.6" class="chip-t">Python</text></g>
+    <g class="chip" style="animation-delay:0.46s"><rect x="463.0" y="312.5" width="102" height="27.0" rx="7"/><text x="514.0" y="330.6" class="chip-t">TypeScript</text></g>
+    <g class="chip" style="animation-delay:0.48s"><rect x="573.0" y="312.5" width="62" height="27.0" rx="7"/><text x="604.0" y="330.6" class="chip-t">Astro</text></g>
+    <g class="chip" style="animation-delay:0.50s"><rect x="643.0" y="312.5" width="78" height="27.0" rx="7"/><text x="682.0" y="330.6" class="chip-t">Node.js</text></g>
+    <g class="chip" style="animation-delay:0.52s"><rect x="729.0" y="312.5" width="62" height="27.0" rx="7"/><text x="760.0" y="330.6" class="chip-t">Linux</text></g>
+    <g class="chip" style="animation-delay:0.54s"><rect x="799.0" y="312.5" width="70" height="27.0" rx="7"/><text x="834.0" y="330.6" class="chip-t">SQLite</text></g>
+    <g class="chip" style="animation-delay:0.56s"><rect x="877.0" y="312.5" width="102" height="27.0" rx="7"/><text x="928.0" y="330.6" class="chip-t">Cloudflare</text></g>
+
+    </g>
+    <g class="row" style="animation-delay:0.37s">
+      <text class="lab" x="210" y="403">INTERESTED IN</text>
+
+      <text class="val" x="385" y="403">self-hosting, security, minimal interfaces</text>
+
+    </g>
+    <g class="row" style="animation-delay:0.46s">
+      <text class="lab" x="210" y="475">CONTACT</text>
+
+      <text class="val mono" x="385" y="475">contact@avenpa.com</text>
+
+    </g>
+
+    <text class="foot" x="210" y="560">BLACK &amp; WHITE, MOSTLY</text>
+  </g>
+
+  <rect x="0.5" y="0.5" width="1199" height="619" rx="20" fill="none" stroke="rgba(255,255,255,0.10)"/>
+</svg>
